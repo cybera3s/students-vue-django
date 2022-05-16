@@ -6,5 +6,5 @@
 			<p style="text-transform: capitalize;">students sample project using vueJs3 and django rest framework</p>
 		</div>
 	</div>
-
+	
 </template>
