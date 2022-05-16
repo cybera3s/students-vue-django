@@ -46,9 +46,8 @@
 	</div>
 
 </template>
-
 <script>
-	
+	import axios from 'axios'
 export default {
 	name: 'LoginView',
 	data (){
@@ -61,7 +60,61 @@ export default {
           	passwordEM: null,
 		}
 	},
-	
+	methods: {
+		doLogin(){
+			let access = true
+
+			// Username validation
+			if (this.username.length < 4){
+	          this.usernameE = true
+	          access = false
+	          if (this.username.length == 0){
+	            this.usernameEM = "Username required!"
+
+	          } else {
+	              this.usernameEM = "Username must be at least 4 characters"            
+	          }
+	        } else {
+	          this.usernameE = false
+	          this.usernameEM = ''
+	        }
+
+	        // Password Validation
+	        if (this.password.length < 8){
+	          this.passwordE = true
+	          access = false
+	          if (this.password.length == 0){
+	            this.passwordEM = "Password required!"
+
+	          } else {
+	              this.passwordEM = "Password must be at least 8 characters"            
+	          }
+	        } else {
+	          this.passwordE = false
+	          this.passwordEM = ''
+	        }
+
+	       if (access){
+
+	            axios
+	              .post('/api/auth/token/login/', {"username": this.username, "password": this.password})
+	              .then(response =>  {
+	              		console.log(response.data)
+	                  	this.$store.commit("login", response.data.auth_token)
+                    	this.$router.push("/students")  // redirect to student list page
+
+	              })
+	              .catch(error => {
+	                  console.log(error.response)
+	                  this.usernameEM = error.response.data.non_field_errors.join(" ")
+	                  this.passwordE = true
+	                  this.usernameE = true
+	              })
+
+        	} 
+        	
+		},
+	}
 
 }
 
