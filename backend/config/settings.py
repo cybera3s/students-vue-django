@@ -144,3 +144,17 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.IsAuthenticatedOrReadOnly",
     ],
 }
+
+
+# CORS Settings
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080",
+    "http://127.0.0.1:8080",
+    "http://localhost:3000",
+]
+
+
+# CORS_ALLOWED_ORIGIN_REGEXES = [
+#     r"^(http|https)://\w+:\d{1,5}$"
+# ]
