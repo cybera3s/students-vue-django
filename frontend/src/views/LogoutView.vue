@@ -14,7 +14,6 @@
               })
               .catch(error => {
                   console.log(error.response.data)
-                  this.logoutError = error.response.data
               })
 		},
 	}
