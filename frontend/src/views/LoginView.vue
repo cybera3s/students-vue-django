@@ -30,7 +30,7 @@
 	                v-model="password"
 	                :class="{
 	                  'is-invalid': passwordE === true,
-	                  'is-valid': passwordE === true
+	                  'is-valid': passwordE === false
 	                }">
 	                 <div class="invalid-feedback" v-if="passwordE">
 	                      {{passwordEM}}
