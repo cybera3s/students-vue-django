@@ -8,6 +8,13 @@ export default createStore({
   getters: {
   },
   mutations: {
+    login(state, token){
+          state.isAuthenticated = true
+          state.token = token
+          localStorage.setItem("token", token)
+          axios.defaults.headers.common['Authorization'] = "Token " + token
+
+    },
   },
   actions: {
   },
