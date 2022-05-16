@@ -100,13 +100,11 @@ export default {
 	            axios
 	              .post('/api/auth/token/login/', {"username": this.username, "password": this.password})
 	              .then(response =>  {
-	              		console.log(response.data)
 	                  	this.$store.commit("login", response.data.auth_token)
                     	this.$router.push("/students")  // redirect to student list page
 
 	              })
 	              .catch(error => {
-	                  console.log(error.response)
 	                  this.usernameEM = error.response.data.non_field_errors.join(" ")
 	                  this.passwordE = true
 	                  this.usernameE = true
@@ -115,8 +113,7 @@ export default {
         	} 
         	
 		},
-	}
-
+	},
 }
 
 </script>
