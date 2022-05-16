@@ -94,8 +94,9 @@ export default {
 	          this.passwordEM = ''
 	        }
 
+        	// if no errors occured
 	       if (access){
-
+	       		// send POST AJAX request 
 	            axios
 	              .post('/api/auth/token/login/', {"username": this.username, "password": this.password})
 	              .then(response =>  {
