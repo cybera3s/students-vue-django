@@ -16,6 +16,13 @@ export default createStore({
           axios.defaults.headers.common['Authorization'] = "Token " + token
 
     },
+    logout(state){
+          state.isAuthenticated = false
+          state.token = ""
+          localStorage.removeItem("token")
+          axios.defaults.headers.common['Authorization'] = ""
+
+    },
   },
   actions: {
   },
