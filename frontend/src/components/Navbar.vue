@@ -13,11 +13,11 @@
 					            <router-link class="nav-link" to="/">Home</router-link>  
 					          </li>
 
-					          <li class="nav-item">
+					          <li class="nav-item" v-if="!$store.state.isAuthenticated">
 					            <router-link class="nav-link" to="/login">Login</router-link>  
 					          </li>
 
-					          <li class="nav-item">
+					          <li class="nav-item" v-if="$store.state.isAuthenticated">
 					            <router-link class="nav-link" to="/logout">Logout</router-link>  
 					          </li>
 				        </ul>
