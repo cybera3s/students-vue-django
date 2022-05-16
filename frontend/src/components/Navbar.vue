@@ -13,6 +13,10 @@
 					            <router-link class="nav-link" to="/">Home</router-link>  
 					          </li>
 
+			           		  <li class="nav-item" v-if="$store.state.isAuthenticated">
+					            <router-link class="nav-link" to="/students">Students</router-link>  
+					          </li>
+
 					          <li class="nav-item" v-if="!$store.state.isAuthenticated">
 					            <router-link class="nav-link" to="/login">Login</router-link>  
 					          </li>
