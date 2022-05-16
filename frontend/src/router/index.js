@@ -16,7 +16,6 @@ const routes = [
     name: 'Login',
     component: LoginView,
     meta: { loginRedirect : true },
-
   },
   {
     path: '/logout',
@@ -43,11 +42,7 @@ router.beforeEach((to, from) => {
       path: '/login'
       // query: { redirect: to.fullPath },
     }
-  } else if (to.meta.loginRedirect && store.state.isAuthenticated){
-    return {
-      path: '/'
-    }
-  }
+  } 
 })
 
 
