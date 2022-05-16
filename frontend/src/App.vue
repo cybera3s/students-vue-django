@@ -3,6 +3,28 @@
   <router-view class="container" />
 </template>
 
+<script>
+  import Navbar from '@/components/Navbar.vue'
+
+  export default {
+    name: 'App',
+    components: {
+      Navbar,
+    },
+    watch :{
+      $route(){
+        // if route changed checks the token for validation
+        this.$store.dispatch("onStart")
+      },
+    },
+    // 
+    mounted(){
+      // on page load checks the token for validation
+      this.$store.dispatch("onStart")
+    },
+  }
+</script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -17,13 +39,3 @@ nav a.router-link-exact-active {
 }
 
 </style>
-<script>
-  import Navbar from '@/components/Navbar.vue'
-
-  export default {
-    name: 'App',
-    components:{
-      Navbar,
-    }
-  }
-</script>
