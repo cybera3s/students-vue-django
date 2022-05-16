@@ -11,6 +11,11 @@
   color: #2c3e50;
 }
 
+nav a.router-link-exact-active {
+  color: white!important;
+  font-weight: bold;
+}
+
 </style>
 <script>
   import Navbar from '@/components/Navbar.vue'
