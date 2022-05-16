@@ -48,8 +48,20 @@
 </template>
 
 <script>
+	
 export default {
 	name: 'LoginView',
+	data (){
+		return {
+			username: '',
+          	password: '',
+          	usernameE: null,
+          	passwordE: null,
+          	usernameEM: null,
+          	passwordEM: null,
+		}
+	},
+	
 
 }
 
