@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import store from '../store'
+import store from '@/store'
 
 import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
@@ -18,7 +18,7 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: LoginView,
-    meta: { loginRedirect : true },
+    meta: { loginRedirect : true},
   },
   {
     path: '/logout',
@@ -30,7 +30,8 @@ const routes = [
     path: '/students',
     name: 'StudentsView',
     component: StudentsView,
-    meta : { loginRequired: true }
+    meta : { loginRequired: true },
+    
   },
 
   
@@ -41,19 +42,18 @@ const router = createRouter({
   routes
 })
 
+// global route guard
 
-// route protecting
-
-router.beforeEach((to, from) => {
-  
-  if (to.meta.loginRequired && !store.state.isAuthenticated) {
-    
-    return {
-      path: '/login'
-      // query: { redirect: to.fullPath },
-    }
+router.beforeEach((to, from, next) => {
+  console.log("Global Guard")
+  if (!store.state.isAuthenticated && to.meta.loginRequired){
+    next({ name: "Login" })
+  } else if (store.state.isAuthenticated && to.meta.loginRedirect) {
+    next({name: "home"})
+  } else {
+    next()  
   } 
+  
 })
-
 
 export default router
