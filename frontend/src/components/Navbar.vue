@@ -3,7 +3,7 @@
 	<div class="Navbar">
 		<nav id="nav" class="navbar navbar-expand-md navbar-dark bg-dark mb-5">
     		<div class="container-fluid">
-      			<router-link class="navbar-brand" to="/">Students</router-link>  
+      			<router-link class="navbar-brand fw-bold" to="/">Students</router-link>  
 			      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 			        <span class="navbar-toggler-icon"></span>
 			      </button>
