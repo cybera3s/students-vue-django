@@ -5,7 +5,7 @@
   		<div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 mx-auto border shadow rounded p-4 mt-3">
   			<!-- Login Form -->
 			<form @submit.prevent="doLogin">
-				<h1 class="text-center fw-bold">Login</h1>
+				<h1 class="text-center fw-bold text-primary">Login</h1>
 				<hr>
               	<div class="mb-3">
 	            	<label for="username" class="form-label">Username *</label>
@@ -16,7 +16,7 @@
 	                    :class="{
 	                      'is-invalid': usernameE === true,
 	                      'is-valid': usernameE === false
-	                    }">
+	                    }" placeholder="username here">
 	                    <div class="invalid-feedback" v-if="usernameE">
 	                      {{usernameEM}}
 	                    </div>
@@ -31,7 +31,7 @@
 	                :class="{
 	                  'is-invalid': passwordE === true,
 	                  'is-valid': passwordE === false
-	                }">
+	                }" placeholder="password here">
 	                 <div class="invalid-feedback" v-if="passwordE">
 	                      {{passwordEM}}
 	                    </div>
