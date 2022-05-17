@@ -18,9 +18,6 @@ Using <b>Django</b> as back-End to Handle Database and <b>Django REST Framework<
 </div>
 
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 ### Built With
  * [Django](https://www.djangoproject.com/)
@@ -29,7 +26,6 @@ Using <b>Django</b> as back-End to Handle Database and <b>Django REST Framework<
 * [Bootstrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Prerequisites
 
@@ -42,7 +38,7 @@ Using <b>Django</b> as back-End to Handle Database and <b>Django REST Framework<
    	```sh
 	sudo apt install python
 	  ```
-other platforms go to  [this link](https://www.python.org/downloads/)
+for other platforms go to  [this link](https://www.python.org/downloads/)
 ### Installation
 
 Clone the repo
@@ -81,9 +77,6 @@ start Django deveopment server
 
 if everything goes well go to:   http://localhost:8080
  
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -100,9 +93,6 @@ Any other usage and information served API will find in http://127.0.0.1:8000/sw
 ## License
 
 Distributed under the GPL License
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 <!-- CONTACT -->
