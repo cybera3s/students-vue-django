@@ -18,6 +18,11 @@ Using <b>Django</b> as back-End to Handle Database and <b>Django REST Framework<
 </div>
 
 
+https://user-images.githubusercontent.com/74768669/168882801-d974ff25-92dd-4fe1-a059-3d1d993cf858.mp4
+
+
+
+
 
 ### Built With
  * [Django](https://www.djangoproject.com/)
@@ -60,12 +65,17 @@ if everything goes well and server is running then for the server side:
 create virtual environment 
 
     python -m virtualenv venv
+  activate venv
+  
+
+    source venv/bin/activate
+
 install required packages
 
     pip install -r requirements.txt
 create databse tables
 
-    python manage.py makemigrations
+    python manage.py makemigrations api
     python manage.py migrate
 create a super user
 
@@ -78,6 +88,7 @@ start Django deveopment server
 if everything goes well go to:   http://localhost:8080
  
 
+
 <!-- USAGE EXAMPLES -->
 ## Usage
 
@@ -87,12 +98,13 @@ You can log in with the username and password you created for your superuser
 after log in you redirect to [students](http://localhost:8080/students) table page you can add or delete any row of table
 
 Any other usage and information served API will find in http://127.0.0.1:8000/swagger/
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- LICENSE -->
 ## License
 
 Distributed under the GPL License
+
+
 
 
 <!-- CONTACT -->
