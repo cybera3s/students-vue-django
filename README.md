@@ -1,12 +1,7 @@
 # Students
-example of students website using django as back-End and vueJS 3 as front-End 
-and django rest framework to build REST API
 
-1- پروژه نمونه دارای یک صفحه لاگین و رمز عبور
-2- بعد از لاگین، کاربر به صفحه جدول هدایت می شود
-3- در صفحه جدول لیستی از اسامی دانش آموزان با قابلیت جستجو درلحظه در بین اسامی
-4- امکان حذف و یا اضافه کردن در جدول
-5- اتصال تمامی 4 ویژگی گفته شده به سرور و پایگاه داده
-*پیاده سازی مناسب سازی شده برای گوشی همراه
-*استفاده از یکی از چارچوبهای JS مانند Angular, ReactJs و یا VueJs الزامی است
+A Sample of **Students Table**  *SPA* website that allows logged in users to access , delete or add a new one into students table. 
+Using **Django** as back-End to Handle Database and **Django REST Framework** to serve REST API for data manipulation in database and also login, logout and identify users through **HTTP**  with **Token Authentication**  system. Using **VueJS 3** as Front-End framework to create a single page applications As well as taking advantage of reactivity of that.
+
+
 
