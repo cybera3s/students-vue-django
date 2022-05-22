@@ -43,7 +43,7 @@ const router = createRouter({
 })
 
 // global route guard
-
+// TODO: remember that every time page reloads the state in store removed so try to optimize that to restrict some routes 
 router.beforeEach((to, from, next) => {
   console.log("Global Guard")
   if (!store.state.isAuthenticated && to.meta.loginRequired){
