@@ -9,27 +9,29 @@
 				<hr>
 				<div v-if="filteredStudents.length">
 					<!-- students table -->
-					<table class="table table-dark table-hover">
-					  <thead>
-					    <tr>
-					      <th scope="col">#</th>
-					      <th scope="col">Name</th>
-					      <th scope="col">Age</th>
-					      <th scope="col">Field</th>
-					      <th scope="col"></th>
-					    </tr>
-					  </thead>
-					  <tbody v-for="student in filteredStudents">
-					    <tr>
-					      <th scope="row">{{ students.indexOf(student) + 1 }}</th>
-					      <td>{{ student.name }}</td>
-					      <td>{{ student.age }}</td>
-					      <td>{{ student.field }}</td>
-					      <td class="text-center"><span class="fw-bold" style="cursor: pointer;" @click="doDel(student.id, students.indexOf(student), $event)">X</span></td>
+					<div class="table-responsive-lg">
+						<table class="table table-dark table-hover">
+						  <thead>
+						    <tr>
+						      <th scope="col">#</th>
+						      <th scope="col">Name</th>
+						      <th scope="col">Age</th>
+						      <th scope="col">Field</th>
+						      <th scope="col"></th>
+						    </tr>
+						  </thead>
+						  <tbody v-for="student in filteredStudents">
+						    <tr>
+						      <th scope="row">{{ students.indexOf(student) + 1 }}</th>
+						      <td>{{ student.name }}</td>
+						      <td>{{ student.age }}</td>
+						      <td>{{ student.field }}</td>
+						      <td class="text-center"><span class="fw-bold" style="cursor: pointer;" @click="doDel(student.id, students.indexOf(student), $event)">X</span></td>
 
-					    </tr>
-					  </tbody>
-					</table>
+						    </tr>
+						  </tbody>
+						</table>
+					</div>
 				</div>
 				<!-- alert box -->
 				<div class="alert alert-warning text-center" v-else>
@@ -58,21 +60,40 @@
 					          <div class="mb-3">
 
 					            <label for="name" class="form-label">Name</label>
-					            <input type="text" v-model="name" class="form-control" id="name" placeholder="Name">
-
+					            <input type="text" v-model="name" class="form-control" id="name" placeholder="Name"
+					            :class="{
+			                      'is-invalid': nameE === true,
+			                      'is-valid': nameE === false
+			                    }">
+					            <div class="invalid-feedback" v-if="nameE">
+			                      {{nameEM}}
+			                    </div>
 					          </div>
 
 					          <div class="mb-3">
 
 					            <label for="age" class="form-label">Age</label>
-					            <input class="form-control" type="number" v-model="age" id="age" placeholder="Age">
-
+					            <input class="form-control" type="number" v-model="age" id="age" placeholder="Age"
+					            :class="{
+			                      'is-invalid': ageE === true,
+			                      'is-valid': ageE === false
+			                    }">
+					            <div class="invalid-feedback" v-if="ageE">
+			                      {{ageEM}}
+			                    </div>
 					          </div>
 
 					          <div class="mb-3">
 
 					            <label for="field" class="form-label">Field</label>
-					            <input class="form-control" v-model="field" id="field" placeholder="Field">
+					            <input class="form-control" v-model="field" id="field" placeholder="Field"
+					            :class="{
+			                      'is-invalid': fieldE === true,
+			                      'is-valid': fieldE === false
+			                    }">
+					            <div class="invalid-feedback" v-if="fieldE">
+			                      {{fieldEM}}
+			                    </div>
 
 					          </div>
 
@@ -105,6 +126,13 @@
 				age: '',
 				field: '',
 				addError: null,
+				nameE: null,
+				nameEM: '',
+				ageE: null,
+				ageEM: '',
+				fieldE: null,
+				fieldEM: '',
+
 			}
 		},
 		mounted(){
@@ -163,8 +191,37 @@
 					age: this.age,
 					field: this.field
 				}
+
 				if (!student.name || !student.age || !student.field){
 					this.addError = true
+				}
+
+				// name validation
+				if (student.name.length > 30 || student.name.length < 2){
+					this.nameE = true
+					this.nameEM = "Name must be between 2-30 characters!"
+				} else {
+					this.nameE = false
+					this.nameEM = ''
+				}
+
+				// age validation
+				if (student.age <= 0 || isNaN(student.age)){
+					this.ageE = true
+					this.ageEM = "age must be greater than zero and all number!"
+				} else {
+					this.ageE = false
+					this.ageEM = ''
+				}
+
+				// field validation
+				if (2 < student.field.length < 35){
+					this.fieldE = true
+					this.fieldEM = "field must be between 2-35 characters"
+				} else {
+					this.fieldE = false
+					this.fieldEM = false
+
 				}
 
 				if (!this.addError){
