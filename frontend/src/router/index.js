@@ -28,7 +28,7 @@ const routes = [
   },
   {
     path: '/students',
-    name: 'StudentsView',
+    name: 'Students',
     component: StudentsView,
     meta : { loginRequired: true },
     
@@ -54,6 +54,11 @@ router.beforeEach((to, from, next) => {
     next()  
   } 
   
+})
+
+// set title dynamic
+router.afterEach((to, from) => {
+    document.title = to.name.charAt(0).toUpperCase() + to.name.slice(1)  // capitalize the name
 })
 
 export default router
