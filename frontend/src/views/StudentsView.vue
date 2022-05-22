@@ -2,8 +2,8 @@
 	<div class="StudentView">
 		<div class="row">
 			<div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-7 mx-auto">
-				<h3>Search: </h3>
-				<input class="mb-3 form-control" type="text" ref="search" v-model="search">
+				
+				<input class="mb-3 form-control" type="text" ref="search" v-model="search" placeholder="Search...">
 
 				<h1 class="fw-bold">Students</h1>
 				<hr>
