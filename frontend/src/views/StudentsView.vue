@@ -5,7 +5,7 @@
 				
 				<input class="mb-3 form-control" type="text" ref="search" v-model="search" placeholder="Search...">
 
-				<h1 class="fw-bold">Students</h1>
+				<h1 class="fw-bold text-center text-primary">Students</h1>
 				<hr>
 				<div v-if="filteredStudents.length">
 					<!-- students table -->
@@ -35,7 +35,7 @@
 				<div class="alert alert-warning text-center" v-else>
 					There is no Students
 				</div>
-				<hr>
+				
 				<button class="btn btn-primary w-100 fw-bold" @click="adding = !adding" data-bs-toggle="modal" data-bs-target="#newStudent">Add New Student</button>
 
 				<!-- Adding Modal -->
@@ -43,7 +43,7 @@
 				  <div class="modal-dialog modal-dialog-centered">
 				    <div class="modal-content">
 				      <div class="modal-header">
-				        <h5 class="modal-title" id="exampleModalLabel">New Student</h5>
+				        <h5 class="modal-title fw-bold" id="exampleModalLabel">New Student</h5>
 				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				      </div>
 
@@ -185,13 +185,6 @@
 				      		this.addError = true
 				      })
 				}
-			}
-		},
-		watch: {
-			adding(){
-				$('form').slideDown(300)
-				
-				
 			}
 		},
 		
