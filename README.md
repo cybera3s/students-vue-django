@@ -43,7 +43,6 @@ https://user-images.githubusercontent.com/74768669/168882801-d974ff25-92dd-4fe1-
    	```sh
 	sudo apt install python
 	  ```
-for other platforms go to  [this link](https://www.python.org/downloads/)
 ### Installation
 
 Clone the repo
